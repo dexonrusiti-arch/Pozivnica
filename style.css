@@ -1,0 +1,130 @@
+:root {
+  --bg: #ffe6eb;
+  --primary: #ff4d6d;
+  --secondary: #ff99ac;
+  --text: #333;
+  --card-bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+
+.screen {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: var(--secondary);
+}
+
+button.secondary {
+  background: var(--secondary);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 3s linear forwards;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-200px); opacity: 0; }
+}
+/* Pismo notifikacija */
+.letter {
+  position: fixed;
+  right: -100px;
+  bottom: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: right 0.8s ease;
+}
+
+.show-letter {
+  right: 20px;
+}
+
+.letter-content {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  background: #fff;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 250px;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.letter-content p {
+  color: var(--primary);
+  font-size: 1.1em;
+}
+
+.hidden {
+  display: none;
+}
+.show-letter {
+  right: 30px;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
